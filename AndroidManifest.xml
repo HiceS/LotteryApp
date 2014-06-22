@@ -24,6 +24,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+        <activity
+    		android:name=".PlayScreen"
+    		android:label="@string/play_screen">
+		</activity>
+		<activity
+    		android:name=".SignPage"
+    		android:label="@string/sign_page">
+		</activity>
 
     </application>
 

@@ -23,12 +23,14 @@ public class LotteryApplication extends Application {
 		
 		//The getters for the data
 		Calendar c = Calendar.getInstance(); 
-        	int day = c.get(Calendar.DATE);
-        	int month = c.get(Calendar.MONTH);
-        	int year = c.get(Calendar.YEAR);
-        	String date = month + "-" + day + "-" + year;
+        int day = c.get(Calendar.DATE);
+        int month = c.get(Calendar.MONTH);
+        int year = c.get(Calendar.YEAR);
+        String date = month + "-" + day + "-" + year;
+        
 		String android_id = Secure.getString(getBaseContext().getContentResolver(),
                 Secure.ANDROID_ID);
+		
 		double app_version = 1.0;
 		String username_getter = "tester";
 		int ticket_number = 1;
