@@ -10,4 +10,47 @@
         android:layout_height="wrap_content"
         android:text="sign your life away here " />
 
+    <EditText
+        android:id="@+id/user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10" >
+    </EditText>
+
+    <EditText
+        android:id="@+id/pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10" />
+
+    <EditText
+        android:id="@+id/pass2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10" />
+
+    <Button
+        android:id="@+id/sign_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/facebook"
+        android:layout_width="wrap_content"     
+        android:layout_height="wrap_content"
+        android:text="Button" />
+	<!--Change to image of facebook-->
+    <Button
+        android:id="@+id/twitter"
+        android:layout_width="wrap_content"		
+        android:layout_height="wrap_content"
+        android:text="Button" />
+	<!--Change to image of twitter-->
 </LinearLayout>

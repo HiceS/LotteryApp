@@ -65,17 +65,6 @@ public class LotteryApplication extends Application {
 		ticket_data.put("prize", prize);
 		ticket_data.saveInBackground();		
 		
-		//Putting the data into the user info table 
-		ParseObject user_table = new ParseObject("User");
-		user_table.put("current_Ticket_Number", ticket_number);
-		user_table.put("username", username_getter);
-		user_table.put("created_Date", date);
-		user_table.put("email", account_email);
-		user_table.put("facebook", facebook_info);
-		user_table.put("twitter", twitter_info);
-		user_table.put("picture", prize);
-		user_table.saveInBackground();
-		
 		//Putting the data into the system table 
 		ParseObject system_table = new ParseObject("System");
 		system_table.put("current_Jackpot_Value", jackpot_value);
