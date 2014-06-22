@@ -43,14 +43,23 @@
 
     <Button
         android:id="@+id/facebook"
-        android:layout_width="wrap_content"     
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Button" />
-	<!--Change to image of facebook-->
+    <!-- Change to image of facebook -->
+
     <Button
         android:id="@+id/twitter"
-        android:layout_width="wrap_content"		
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Button" />
-	<!--Change to image of twitter-->
+    <!-- Change to image of twitter -->
+
+    <TextView
+        android:id="@+id/error_messages"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
+
 </LinearLayout>
