@@ -36,10 +36,10 @@
         android:ems="10" />
 
     <Button
-        android:id="@+id/sign_up"
+        android:id="@+id/sign_finish"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="Sign Up" />
 
     <Button
         android:id="@+id/facebook"

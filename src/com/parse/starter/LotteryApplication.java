@@ -7,8 +7,10 @@ import android.provider.Settings.Secure;
 
 import com.parse.Parse;
 import com.parse.ParseACL;
+import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
+import com.parse.SignUpCallback;
 
 public class LotteryApplication extends Application {
 
@@ -83,8 +85,8 @@ public class LotteryApplication extends Application {
 		drawing_table.put("graded_Tickets", graded_tickets);
 		drawing_table.saveInBackground();
 		
+		
 		//Parse user default area
-		ParseUser.enableAutomaticUser();
 		ParseACL defaultACL = new ParseACL();
 	    
 		// If you would like all objects to be private by default, remove this line.
