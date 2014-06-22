@@ -6,14 +6,18 @@
 
     <TextView
         android:id="@+id/textView1"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:gravity="center"
+        android:textSize="30sp"
         android:text="sign your life away here " />
 
     <EditText
         android:id="@+id/user"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:ems="10" >
     </EditText>
 
@@ -21,30 +25,35 @@
         android:id="@+id/pass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:ems="10" />
 
     <EditText
         android:id="@+id/pass2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:ems="10" />
 
     <EditText
         android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:ems="10" />
 
     <Button
         android:id="@+id/sign_finish"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="Sign Up" />
 
     <Button
         android:id="@+id/facebook"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="Button" />
     <!-- Change to image of facebook -->
 
@@ -52,14 +61,8 @@
         android:id="@+id/twitter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="Button" />
     <!-- Change to image of twitter -->
-
-    <TextView
-        android:id="@+id/error_messages"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:textAppearance="?android:attr/textAppearanceMedium"/>
 
 </LinearLayout>

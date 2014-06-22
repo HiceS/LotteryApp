@@ -52,12 +52,13 @@ public class SignPage extends Activity {
 				EditText pass = (EditText) findViewById(R.id.pass);
 				EditText pass2 = (EditText) findViewById(R.id.pass2);
 				EditText email1 = (EditText) findViewById(R.id.email);
-				final TextView mError = (TextView) findViewById(R.id.error_messages);
 
 				String username = user1.getText().toString();
 				String passL = pass.getText().toString();
 				String passR = pass2.getText().toString();
 				String email = email1.getText().toString();
+				
+				
 
 				if (passR.equals(passL)) {
 					String password = passL;
@@ -94,21 +95,29 @@ public class SignPage extends Activity {
 								startActivity(sign);
 								finish();
 							} else {
+								String error = null;
 								// Sign up didn't succeed. Look at the
 								// ParseException
 								switch(e.getCode()){
 								case ParseException.USERNAME_TAKEN:
-								  mError.setText("Sorry, this username has already been taken.");
+								  error = ("Sorry, this username has already been taken.");
 								  break;
 								case ParseException.USERNAME_MISSING:
-								  mError.setText("Sorry, you must supply a username to register.");
+								  error = ("Sorry, you must supply a username to register.");
 								  break;
 								case ParseException.PASSWORD_MISSING:
-								  mError.setText("Sorry, you must supply a password to register.");
+								  error = ("Sorry, you must supply a password to register.");
 								  break;
 								default:
-								  mError.setText(e.getLocalizedMessage());
+								   error  = (e.getLocalizedMessage());
 								}
+								
+								AlertDialog.Builder alert = new AlertDialog.Builder(
+										SignPage.this);
+								alert.setTitle("Error");
+								alert.setMessage(error);
+								alert.show();
+								
 								v.setEnabled(true);
 							}
 						}
