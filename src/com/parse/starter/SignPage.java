@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.parse.Parse;
 import com.parse.ParseACL;
@@ -20,10 +19,6 @@ import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 
 public class SignPage extends Activity {
-
-	// String android_id =
-	// Secure.getString(getBaseContext().getContentResolver(),
-	// Secure.ANDROID_ID);
 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -62,19 +57,10 @@ public class SignPage extends Activity {
 
 				if (passR.equals(passL)) {
 					String password = passL;
-					// SignData user = new SignData(username, passL , email ,
-					// date);
-
-					// Add your initialization code here
 
 					ParseACL defaultACL = new ParseACL();
-
-					// If you would like all objects to be private by default,
-					// remove this line.
 					defaultACL.setPublicReadAccess(true);
-
 					ParseACL.setDefaultACL(defaultACL, true);
-					
 					
 					ParseUser user = new ParseUser();
 					user.setUsername(username);
@@ -84,20 +70,16 @@ public class SignPage extends Activity {
 					user.put("created_Date", date);
 					// user.put("facebook", facebook_info);
 					// user.put("twitter", twitter_info);
-					// add picture stuff user.put("picture", prize);
+					// user.put("picture", prize);					ADD PICTURE STUFF
 					user.signUpInBackground(new SignUpCallback() {
 						public void done(com.parse.ParseException e) {
-							// TODO Auto-generated method stub
 							if (e == null) {
-								// Hooray! Let them use the app now.
 								Intent sign = new Intent(SignPage.this,
 										PlayScreen.class);
 								startActivity(sign);
 								finish();
 							} else {
 								String error = null;
-								// Sign up didn't succeed. Look at the
-								// ParseException
 								switch(e.getCode()){
 								case ParseException.USERNAME_TAKEN:
 								  error = ("Sorry, this username has already been taken.");
