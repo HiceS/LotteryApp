@@ -10,11 +10,14 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.util.Log;
 
+import com.parse.CountCallback;
 import com.parse.Parse;
 import com.parse.ParseACL;
 import com.parse.ParseAnalytics;
 import com.parse.ParseException;
+import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 
@@ -62,11 +65,27 @@ public class SignPage extends Activity {
 					defaultACL.setPublicReadAccess(true);
 					ParseACL.setDefaultACL(defaultACL, true);
 					
-					ParseUser user = new ParseUser();
+					final ParseUser user = new ParseUser();
+					ParseQuery<ParseUser> query = ParseQuery.getQuery("userNumber");
 					user.setUsername(username);
 					user.setPassword(password);
 					user.setEmail(email);
-					// user.put("ticket_Number", ticket_number);
+					query.countInBackground(new CountCallback() {
+						  public void done(int count, ParseException e) {
+						    if (e == null) {
+						      // The count request succeeded. Log the count
+						    	Log.d("Ticket", "Ticket Number: " + count);
+						    	user.put("ticket_Number", count);
+						    } else {
+						      // The request failed
+						    	AlertDialog.Builder alert = new AlertDialog.Builder(
+										SignPage.this);
+								alert.setTitle("Error");
+								alert.setMessage("Error finidng ticket number");
+								alert.show();
+						    }
+						  }
+						});
 					user.put("created_Date", date);
 					// user.put("facebook", facebook_info);
 					// user.put("twitter", twitter_info);
