@@ -35,7 +35,8 @@
         android:layout_marginLeft="40dp"
         android:singleLine="true"
         android:hint="@string/password"
-        android:ems="10" >
+        android:ems="10"
+        android:inputType="textPassword" >
 
     </EditText>
 

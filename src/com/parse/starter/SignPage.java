@@ -66,26 +66,37 @@ public class SignPage extends Activity {
 					ParseACL.setDefaultACL(defaultACL, true);
 					
 					final ParseUser user = new ParseUser();
-					ParseQuery<ParseUser> query = ParseQuery.getQuery("userNumber");
+					ParseQuery<ParseUser> query = ParseUser.getQuery();
 					user.setUsername(username);
 					user.setPassword(password);
 					user.setEmail(email);
-					query.countInBackground(new CountCallback() {
-						  public void done(int count, ParseException e) {
-						    if (e == null) {
-						      // The count request succeeded. Log the count
-						    	Log.d("Ticket", "Ticket Number: " + count);
-						    	user.put("ticket_Number", count);
-						    } else {
-						      // The request failed
-						    	AlertDialog.Builder alert = new AlertDialog.Builder(
-										SignPage.this);
-								alert.setTitle("Error");
-								alert.setMessage("Error finidng ticket number");
-								alert.show();
-						    }
-						  }
-						});
+//					query.countInBackground(new CountCallback() {
+//						  public void done(int count, ParseException e) { 
+//						    if (e == null) {
+//						      // The count request succeeded. Log the count
+//						    	Log.d("Ticket", "Ticket Number: " + count);
+//						    	ticketNumber = count;
+//						    } else {
+//						      // The request failed
+//						    	AlertDialog.Builder alert = new AlertDialog.Builder(
+//										SignPage.this);
+//								alert.setTitle("Error");
+//								alert.setMessage("Error finidng ticket number");
+//								alert.show();
+//						    }
+//						  }
+//					});
+					int ticketNumber = 0;
+					try {
+						ticketNumber = query.count();
+					} catch(ParseException e) {
+						AlertDialog.Builder alert = new AlertDialog.Builder(SignPage.this);
+						alert.setTitle("Error");
+						alert.setMessage("Error finidng ticket number");
+						alert.show();
+					}
+
+			    	user.put("ticket_Number", ticketNumber);
 					user.put("created_Date", date);
 					// user.put("facebook", facebook_info);
 					// user.put("twitter", twitter_info);
@@ -93,8 +104,7 @@ public class SignPage extends Activity {
 					user.signUpInBackground(new SignUpCallback() {
 						public void done(com.parse.ParseException e) {
 							if (e == null) {
-								Intent sign = new Intent(SignPage.this,
-										PlayScreen.class);
+								Intent sign = new Intent(SignPage.this, PlayScreen.class);
 								startActivity(sign);
 								finish();
 							} else {
