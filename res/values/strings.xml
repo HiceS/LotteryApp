@@ -9,4 +9,6 @@
     <string name="sign_up">Sign Up Now</string>
     <string name="play_screen">Play Screen</string>
     <string name="sign_page">Sign Up Page</string>
+    <string name="number_screen">Number Picking Screen</string>
+    <string name="settings_screen">Account settings page</string>
 </resources>

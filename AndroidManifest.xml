@@ -33,6 +33,14 @@
     		android:name=".SignPage"
     		android:label="@string/sign_page">
 		</activity>
+		<activity
+    		android:name=".NumberScreen"
+    		android:label="@string/number_screen">
+		</activity>
+		<activity
+    		android:name=".SettingsScreen"
+    		android:label="@string/settings_screen">
+		</activity>
 
     </application>
 

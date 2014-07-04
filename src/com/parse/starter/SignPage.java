@@ -104,7 +104,7 @@ public class SignPage extends Activity {
 					user.signUpInBackground(new SignUpCallback() {
 						public void done(com.parse.ParseException e) {
 							if (e == null) {
-								Intent sign = new Intent(SignPage.this, PlayScreen.class);
+								Intent sign = new Intent(SignPage.this, NumberScreen.class);
 								startActivity(sign);
 								finish();
 							} else {
