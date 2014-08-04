@@ -56,6 +56,7 @@ public class StartActivity extends ActionBarActivity {
 	/**
 	 * A placeholder fragment containing a simple view.
 	 */
+	
 	public class PlaceholderFragment extends Fragment implements OnClickListener {
 
 		public PlaceholderFragment() {
