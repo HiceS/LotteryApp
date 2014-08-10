@@ -7,16 +7,14 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.lotteryandroid.StartActivity$PlaceholderFragment"
-    android:background="@drawable/lottery_background"
+    android:background="#fff"
     android:focusableInTouchMode="true"
-    android:focusable="true"
-    android:textColor="#fff" >
+    android:focusable="true" >
 
     <LinearLayout
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" 
-    android:textColor="#fff" >
+    android:orientation="vertical" >
 
 
     <TextView
@@ -26,12 +24,10 @@
         android:layout_marginTop="80dp"
         android:gravity="center"
         android:textSize="30sp"
-        android:textColor="#fff"
         android:text="@string/login_page" />
 
     <EditText
         android:id="@+id/username"
-        android:textColor="#fff"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -42,7 +38,6 @@
         android:ems="10" />
 
     <EditText
-        android:textColor="#fff"
         android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -55,7 +50,6 @@
         android:inputType="textPassword" />
 
     <Button
-        android:textColor="#fff"
         android:id="@+id/login"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -66,7 +60,6 @@
         android:text="@string/login" />
 
     <Button
-        android:textColor="#fff"
         android:id="@+id/sign_up"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
