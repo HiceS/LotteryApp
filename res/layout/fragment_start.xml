@@ -7,9 +7,9 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.lotteryandroid.StartActivity$PlaceholderFragment"
-    android:background="#fff"
+     android:background="@drawable/bluebackground" 
     android:focusableInTouchMode="true"
-    android:focusable="true" >
+    android:focusable="true">
 
     <LinearLayout
     android:layout_width="fill_parent"
@@ -53,20 +53,20 @@
         android:id="@+id/login"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="40dp"
-        android:layout_marginRight="80dp"
         android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
         android:text="@string/login" />
 
     <Button
         android:id="@+id/sign_up"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="80dp"
         android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginTop="3dp"
+        android:gravity="center"
         android:text="@string/sign_up" />
 
 </LinearLayout>

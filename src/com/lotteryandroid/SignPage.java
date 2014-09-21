@@ -86,17 +86,6 @@ public class SignPage extends Activity {
 //						    }
 //						  }
 //					});
-					int ticketNumber = 0;
-					try {
-						ticketNumber = query.count();
-					} catch(ParseException e) {
-						AlertDialog.Builder alert = new AlertDialog.Builder(SignPage.this);
-						alert.setTitle("Error");
-						alert.setMessage("Error finidng ticket number");
-						alert.show();
-					}
-
-			    	user.put("ticket_Number", ticketNumber);
 					user.put("created_Date", date);
 					// user.put("facebook", facebook_info);
 					// user.put("twitter", twitter_info);

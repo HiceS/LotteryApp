@@ -18,6 +18,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.parse.LogInCallback;
+import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseUser;
 
@@ -29,7 +30,10 @@ public class StartActivity extends ActionBarActivity {
 		setContentView(R.layout.activity_start);
 		
 		android.app.ActionBar bar = getActionBar();
-		bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#33CCFF")));
+		bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#6699FF")));
+		
+		Parse.initialize(this, "6YAoAZ3JUXdtwI1RVMPdkH5J6AbjAweyTnUtzSPB",
+				"Tb4jIuH4GpCuagvHtTQgxlknMwCw9Tdk1c1jrpvM");
 		
 		if (savedInstanceState == null) {
 			getSupportFragmentManager().beginTransaction()
@@ -54,7 +58,7 @@ public class StartActivity extends ActionBarActivity {
 		switch (item.getItemId()) {
 	      // Something else
 	    case R.id.action_settings:
-	      Intent intent = new Intent(this, PlayScreen.class);
+	      Intent intent = new Intent(StartActivity.this, SettingsScreen.class);
 	      startActivity(intent);
 	    default:
 	      break;

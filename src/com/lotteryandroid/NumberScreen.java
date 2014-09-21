@@ -9,9 +9,12 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.parse.Parse;
 import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
 import com.parse.ParseUser;
-import com.parse.SignUpCallback;
+import com.parse.SaveCallback;
 
 public class NumberScreen extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
@@ -20,6 +23,8 @@ public class NumberScreen extends Activity {
 
 		Button sign_up = (Button) findViewById(R.id.numbers_selected);
 		sign_up.setOnClickListener(onClickListener);
+		
+		Parse.initialize(this, "6YAoAZ3JUXdtwI1RVMPdkH5J6AbjAweyTnUtzSPB", "Tb4jIuH4GpCuagvHtTQgxlknMwCw9Tdk1c1jrpvM");
 
 	}
 
@@ -81,9 +86,33 @@ public class NumberScreen extends Activity {
 							+ num4 + "-" + num5 + "-" + num6;
 
 					ParseUser current = ParseUser.getCurrentUser();
-					current.put("lottery_Numbers", numbersFinal);
-					current.saveInBackground(null);
-
+					String username_current = current.getUsername();
+					
+					
+					ParseObject ticket = new ParseObject("Ticket");
+					
+					ParseQuery<ParseUser> query = ParseUser.getQuery();
+			    	int ticketNumber = 0;
+					try {
+						ticketNumber = query.count();
+					} catch(ParseException e) {
+						AlertDialog.Builder alert = new AlertDialog.Builder(NumberScreen.this);
+						alert.setTitle("Error");
+						alert.setMessage("Error finidng ticket number");
+						alert.show();
+					}
+					
+					ticket.put("ticket_ID", ticketNumber);
+					ticket.put("matched_Numbers", 0);
+					ticket.put("prize", 0);
+					ticket.put("ticket_Number", numbersFinal);
+					ticket.put("username", username_current);
+			    	ticket.saveInBackground();
+			    	
+					current.put("ticket_ID", ticketNumber); 
+					current.put("ticket_Number", numbersFinal);
+					current.saveInBackground();
+					
 					Intent sign = new Intent(NumberScreen.this,
 							PlayScreen.class);
 					startActivity(sign);
